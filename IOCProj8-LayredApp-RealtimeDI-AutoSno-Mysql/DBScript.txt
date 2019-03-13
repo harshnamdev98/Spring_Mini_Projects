@@ -1,0 +1,1 @@
+SQL> create table spring_student (sno int(5) primary key auto increment,sname varchar(20),total int(8),avg float,result varchar(10));

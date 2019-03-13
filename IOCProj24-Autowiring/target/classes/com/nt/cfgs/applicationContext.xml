@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byType" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+  <!-- Dependent Bean class cfg -->
+  <bean id="plan1"  class="com.nt.beans.TourPlan" >
+    <property name="places">  <!-- Explicit wiring -->
+      <list>
+       <value>ooty</value>
+       <value>kodaicanal</value>
+       <value>Goa</value>
+       <value>munnar hills</value>
+       </list>
+    </property>
+  </bean>	
+    <bean id="plan2"  class="com.nt.beans.TourPlan"  primary="true" >
+    <property name="places"> <!--  Explicit wiring -->
+      <list>
+       <value>simla</value>
+       <value>manali</value>
+       <value>mahabhaleswar</value>
+       <value>lonawala</value>
+       </list>
+    </property>
+  </bean>	   
+  <!-- Cfg target class -->
+  <bean id="agent" class="com.nt.beans.TravelAgent" autowire="byType" >
+    <constructor-arg ref="plan1"/>
+  </bean>
+
+</beans>

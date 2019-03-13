@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="sysDate"  class="java.util.Date"/>
+	<bean id="dobDate"  class="java.util.Date">
+	   <property name="year" value="87"/>
+	   <property name="month" value="10"/>
+	   <property name="date" value="20"/>
+	</bean>
+	<bean id="dojDate"  class="java.util.Date">
+	   <property name="year" value="111"/>
+	   <property name="month" value="10"/>
+	   <property name="date" value="30"/>
+	</bean>
+	
+	
+	
+  <bean id="st" class="com.nt.beans.Student">
+    <property name="marks">
+<!--       <array>
+        <value>90</value>
+        <value>60</value>
+        <value>80</value>
+      </array>
+ -->
+      <list>
+        <value>90</value>
+        <value>60</value>
+        <value>80</value>
+      </list>
+    </property>
+    <property name="dates">
+      <array>
+         <ref bean="sysDate"/>
+         <ref bean="dobDate"/>
+         <ref bean="dojDate"/>
+      </array>
+    </property>
+  </bean>
+  
+  <bean id="comp"  class="com.nt.beans.Company">
+     <property name="empNames">
+       <list>
+         <value>raja</value>
+         <value>rani</value>
+         <value>ramesh</value>
+         <value>raja</value>
+       </list>
+     </property>
+     <property name="dates">
+       <list>
+         <ref bean="sysDate"/>
+         <ref bean="dobDate"/>
+         <ref bean="dojDate"/>
+       </list>
+     
+     </property>
+  </bean>
+  
+  <bean id="mnp"  class="com.nt.beans.MobileNetworkProvider">
+    <property name="fancyNumbers">
+      <set>
+        <value>8888888888</value>
+        <value>7777777777</value>
+        <value>6666666666</value>
+         <value>6666666666</value>
+      </set>
+    </property>
+    
+     <property name="dates">
+       <set>
+         <ref bean="sysDate"/>
+         <ref bean="sysDate"/>
+         <ref bean="dobDate"/>
+         <ref bean="dojDate"/>
+       </set>
+     
+     </property>
+  </bean>
+  <bean id="university"  class="com.nt.beans.University">
+    <property name="facultySubjects">
+      <map>
+        <entry>
+          <key><value>hari</value></key>
+          <value>CoreJava</value>
+        </entry>
+        <entry key="venkatesh"  value="CoreJaa"/>
+        <entry>
+          <key ><value>vijay</value></key>
+          <value>oracle</value>
+        </entry>
+      </map>
+    </property>
+    <property name="impDates">
+      <map>
+       <entry>
+        <key><value>systemDate</value></key>
+        <ref bean="sysDate"/>
+       </entry>
+       <entry key="dob"  value-ref="dobDate"/>
+       <entry key="doj" value-ref="dojDate"/>
+      </map>
+    </property>
+    
+    <property name="dates">
+     <map>
+      <entry>
+        <key><ref bean="dobDate"/></key>
+        <ref bean="dojDate"/>
+      </entry>
+      <entry key-ref="sysDate" value-ref="dojDate"/>
+     </map>
+    </property>
+  </bean>
+  
+  <bean id="fruitStore"  class="com.nt.beans.FruitShop">
+    <property name="fruitColors">
+      <props>
+        <prop key="apple">red</prop>
+        <prop key="banana">yellow</prop>
+        <prop key="mango">yellow</prop>
+        <prop key="avacado">green</prop>
+      </props>
+    </property>
+  </bean>
+
+</beans>

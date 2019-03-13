@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- Cfg PropertyPlaceHolderConfigurer -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <!-- <property name="location" value="com/nt/commons/jdbc.properties"/> -->
+	    <property name="locations">
+	       <array>
+	         <value>com/nt/commons/jdbc1.properties</value>
+	         <value>com/nt/commons/jdbc2.properties</value>
+	       </array>
+	    </property>
+	   
+	</bean>
+	
+<!-- DataSource cfg -->
+  <bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+     <property name="driverClassName" value="${jdbc.driver}"/>
+     <property name="url" value="${jdbc.url}"/>
+     <property name="username" value="${jdbc.user}"/>
+     <property name="password" value="${jdbc.pwd}"/>
+  </bean>
+  
+  
+  <!--  DAO class cfg -->
+  <bean id="studDAO"  class="com.nt.dao.StudentDAOImpl">
+     <!-- <constructor-arg name="ds" ref="scds" /> -->
+     <constructor-arg name="ds" ref="drds" />
+  </bean>
+  <!-- Service clss cfg -->
+  <bean id="examService" class="com.nt.service.ExaminationServiceImpl">
+   <!--   <constructor-arg name="dao" ref="studDAO"/> -->
+    <constructor-arg><ref bean="studDAO"/></constructor-arg>
+  </bean>
+  <bean id="controller" class="com.nt.controller.MainController">
+    <constructor-arg name="service" ref="examService"/>
+  </bean>
+
+</beans>

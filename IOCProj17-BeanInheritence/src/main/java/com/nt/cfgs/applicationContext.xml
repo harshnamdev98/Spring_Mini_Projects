@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <bean id="baseBike"  class="com.nt.beans.Bike"  abstract="true">
+    <property name="engineCC" value="180cc"/>
+    <property name="modelName" value="Bajajpulsor"/>
+    <property name="make" value="Bajaj"/>
+    <property name="mileage" value="40kmpl"/>
+    <property name="price" value="90000"/>
+    <property name="trasmission" value="5Speed-Manual"/>
+ </bean>
+ 
+ <bean id="bike1"  class="com.nt.beans.Bike"  parent="baseBike">
+    <property name="regNo"  value="TS07EN4797"/>
+    <property name="color"  value="black"/>
+ </bean>
+ 
+  <bean id="bike2"  class="com.nt.beans.Bike"  parent="baseBike">
+    <property name="regNo"  value="TS07EN4898"/>
+    <property name="color"  value="red"/>
+ </bean>
+ 
+
+</beans>

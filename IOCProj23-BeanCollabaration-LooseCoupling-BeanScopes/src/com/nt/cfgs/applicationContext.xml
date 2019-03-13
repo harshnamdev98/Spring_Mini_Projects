@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Dependent bean classes cfg  -->
+  <bean id="dtdc"  class="com.nt.beans.DTDC"/>
+  <bean id="bDart"  class="com.nt.beans.BlueDart"/>
+  <bean id="fFlight"  class="com.nt.beans.FirstFlight"/>
+  <bean id="dhl"  class="com.nt.beans.DHL"/>
+  <!-- taget bean class cfg -->
+  <bean id="fpkt"  class="com.nt.beans.Flipkart" scope="application">
+     <property name="courier"  ref="dhl"/>
+  </bean>
+  
+  <bean id="osw"  class="com.nt.beans.Flipkart" scope="singleton">
+     <property name="courier"  ref="dhl"/>
+  </bean>
+  
+  <bean id="pu1"  class="com.nt.singleton.PrinterUtil" factory-method="getInstance" scope="singleton"/>
+  
+  <bean id="pu2"  class="com.nt.singleton.PrinterUtil" factory-method="getInstance" scope="singleton"/>
+  
+  <bean id="pu3"  class="com.nt.singleton.PrinterUtil" scope="prototype"  factory-method="getInstance"/>
+  
+
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!-- Date values Cfg -->
+ <bean id="dojDate" class="java.util.Date">
+   <property name="year" value="110"/>
+   <property name="month" value="10"/>
+   <property name="date" value="20"/>
+ </bean>
+ 
+ <bean id="domDate" class="java.util.Date">
+   <property name="year" value="115"/>
+   <property name="month" value="12"/>
+   <property name="date" value="30"/>
+ </bean>	
+ 	
+	
+ <!-- Bean cfg -->
+ <bean id="pDetails" class="com.nt.beans.PersonDetails">
+   <constructor-arg><null/></constructor-arg>
+   <constructor-arg value="28"/>
+   <constructor-arg><null/></constructor-arg>
+   <constructor-arg  ref="dojDate"/>
+   <constructor-arg  ref="domDate"/>
+ </bean>	
+	
+
+
+</beans>

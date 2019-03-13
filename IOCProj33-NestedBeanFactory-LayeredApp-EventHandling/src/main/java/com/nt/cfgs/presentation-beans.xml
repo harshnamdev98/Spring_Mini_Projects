@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!-- Cfg Controller -->
+  <bean id="controller" class="com.nt.controller.MainController">
+     <!-- <constructor-arg ref="empService"/> -->
+     <constructor-arg >
+        <ref bean="empService"/>
+     </constructor-arg>
+  </bean>
+  
+  <!-- cfg service class -->
+ <!--  <bean id="empService"  class="com.nt.service.EmployeeMgmtServiceImpl">
+     <constructor-arg ref="empDAO"/>
+     <constructor-arg value="child/localContaner"/>
+  </bean>  -->
+  
+  <bean class="com.nt.listener.PerformanceEvaluatorListener"/>
+  
+
+</beans>

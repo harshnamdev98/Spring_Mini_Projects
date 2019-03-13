@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Cfg Date classes -->
+ <bean id="dob"  class="java.util.Date" p:year="87" p:month="9" p:date="25"/>
+ <bean id="dos"  class="java.util.Date" p:year="104" p:month="04" p:date="4"/>
+ <!-- Cfg Dependent class-->
+ <bean id="dept" class="com.nt.beans.Department" c:deptNo="1001" c:deptName="IT" c:dos-ref="dos"/>
+ <!-- Cfg Target  class-->
+ <bean id="emp" class="com.nt.beans.Employee" p:empNo="101" p:empName="raja" p:dob-ref="dob" p:dept-ref="dept"/>
+  
+ 
+ 
+  
+ 
+
+</beans>

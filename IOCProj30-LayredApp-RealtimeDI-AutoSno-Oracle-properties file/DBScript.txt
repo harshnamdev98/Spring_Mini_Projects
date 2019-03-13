@@ -1,0 +1,2 @@
+SQL> create table spring_student (sno number(5) primary key ,sname varchar2(20),total number(8),avg number(7,2),result varchar2(10));
+SQL> create sequence sno_seq start with 1 increment by 1;

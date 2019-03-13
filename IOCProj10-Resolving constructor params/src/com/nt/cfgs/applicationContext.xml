@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  
+  <!-- Resolving constructor params by type -->
+  <bean id="emp"  class="com.nt.beans.Employee">
+    <constructor-arg type="float" value="9000.45f"/>
+    <constructor-arg type="int" value="1001"/>
+    <constructor-arg type="java.lang.String" value="raja"/>
+  </bean>
+  
+   <!-- Resolving constructor params by index -->
+   <bean id="mk"  class="com.nt.beans.Marks">
+    <constructor-arg index="2" value="100"/>
+    <constructor-arg index="3" value="50"/>
+    <constructor-arg index="0" value="70"/>
+    <constructor-arg index="1"><value>60</value></constructor-arg>
+  </bean>
+  
+  <!-- Resolving constructor params by name -->
+    <bean id="cust"  class="com.nt.beans.Customer">
+       <constructor-arg name="cname" value="raja"/>
+       <constructor-arg name="cno1" value="101"/>
+       <constructor-arg name="billAmt" value="7800"/>
+        <constructor-arg name="addrs" value="hyd"/>
+    </bean>
+
+
+</beans>

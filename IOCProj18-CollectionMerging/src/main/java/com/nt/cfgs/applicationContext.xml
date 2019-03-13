@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+   <!-- Spring  Bean cfg -->
+   <bean id="engg1stSem" class="com.nt.beans.EnggCourse">
+     <property name="subjects">
+       <list>
+         <value>C</value>
+         <value>M1</value>
+       </list>
+     </property>
+   </bean>
+   
+   <!-- Spring  Bean cfg -->
+   <bean id="eceEngg1stSem" class="com.nt.beans.EnggCourse" parent="engg1stSem">
+     <property name="subjects">
+       <list>
+         <value>EDC</value>
+         <value>DE</value>
+       </list>
+       <!-- <list merge="true">
+         <value>EDC</value>
+         <value>DE</value>
+       </list> -->
+     </property>
+   </bean>
+   
+
+</beans>
