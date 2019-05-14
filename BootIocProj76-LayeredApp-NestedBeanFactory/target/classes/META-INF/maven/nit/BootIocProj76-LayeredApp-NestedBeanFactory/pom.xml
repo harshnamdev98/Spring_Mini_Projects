@@ -45,12 +45,12 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.2</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 
 
 		<dependency>
@@ -76,20 +76,20 @@
 
  
  <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
-<dependency>
+<!-- <dependency>
     <groupId>com.mchange</groupId>
     <artifactId>c3p0</artifactId>
     <version>0.9.5.2</version>
-</dependency>
+</dependency> -->
     
  
  <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
-<dependency>
+<!-- <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-dbcp2</artifactId>
     <version>2.5.0</version>
 </dependency>
- 
+  -->
   
   <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
 <!-- <dependency>
@@ -99,7 +99,7 @@
 </dependency>
    -->
 
-		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+<!-- 		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
@@ -112,7 +112,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
